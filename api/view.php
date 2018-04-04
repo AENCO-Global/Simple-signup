@@ -9,6 +9,9 @@ class View {
         }
     }
     public function render($template_file) {
+
+print($this->template_dir.$template_file);
+
         if (file_exists($this->template_dir.$template_file)) {
             include $this->template_dir.$template_file;
         } else {
