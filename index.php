@@ -11,8 +11,7 @@
 		$form = $_REQUEST['form'];
 	else
 		$form = "";
-	endif
-
+	
 	switch ($form) {
 
 	    case "kyc":
