@@ -12,6 +12,9 @@
 	else
 		$form = "";
 
+	
+	include_once('header.php');
+	
 	switch ($form) {
 
 	    case "kyc":
