@@ -15,16 +15,16 @@
 	switch ($form) {
 
 	    case "kyc":
-	    	$template = 'forms/kyc.html';
+	    	$template = 'kyc.html';
 	        break;
 
 	    case "kyb":
-			$template = 'forms/kyb.html';
+			$template = 'kyb.html';
 	        break;
 
 	    default:
 	        // default form
-	    	$template = 'forms/kyc.html';
+	    	$template = 'kyc.html';
 	    	break;
 	}
 
