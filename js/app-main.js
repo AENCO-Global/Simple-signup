@@ -1,12 +1,18 @@
-var aencoin = angular.module('aencoin', ['ngAnimate','ngRoute','ngSanitize','ui.bootstrap']);
+var signup_aencoin = angular.module('signup_aencoin', ['ngAnimate','ngRoute','ngSanitize','ui.bootstrap']);
 
-aencoin.config(function( $routeProvider ){
+signup_aencoin.config(function( $routeProvider, $locationProvider ){
     $routeProvider
-        .when('/', { templateUrl: 'snippets/login.html', controller: 'loginController' })
+        .when('/', { templateUrl: 'snippets/signup.html', controller: 'signupController' })
         .otherwise({ redirectTo: '/' });
+		
+/*	$locationProvider.html5Mode({
+		enabled: true,
+		requireBase: true
+	});
+*/
 });
 
-aencoin.controller( 'appinit' , function( $scope, $timeout, $http ){
+signup_aencoin.controller( 'appinit' , function( $scope, $timeout, $http ){
     if( ! $scope.data ){ $scope.data = { authorised: false }; }
 
     var email = checkCookie('email');
@@ -34,7 +40,7 @@ aencoin.controller( 'appinit' , function( $scope, $timeout, $http ){
     }
 });
 
-aencoin.directive('loading', function ($http, $timeout) {
+signup_aencoin.directive('loading', function ($http, $timeout) {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
@@ -56,7 +62,7 @@ aencoin.directive('loading', function ($http, $timeout) {
     };
 });
 
-aencoin.directive('stringToNumber', function() {
+signup_aencoin.directive('stringToNumber', function() {
     return {
         require: 'ngModel',
         link: function(scope, element, attrs, ngModel) {
@@ -70,7 +76,7 @@ aencoin.directive('stringToNumber', function() {
     };
 });
 
-aencoin.filter("asDate", function(){
+signup_aencoin.filter("asDate", function(){
     return function (input) {
         return new Date(input);
     }
