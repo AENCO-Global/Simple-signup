@@ -1,0 +1,17 @@
+*{ box-sizing: border-box; }
+
+@media (min-width: 768px){
+	.container{
+		width: 90%;
+		Margin: 0 auto;
+	}
+	
+	.col-md-offset-3, .col-sm-offset-2, .col-sm-8{
+		margin: 0 auto;
+		width: 95%;
+	}
+	
+	.main-box{
+		margin: 0 auto !important;
+	}
+}
