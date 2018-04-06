@@ -20,8 +20,8 @@ ls  -l
 echo "--------------------------------------"
 
 echo "--=== Transfer files to remote Server ===--"
-echo "rsync -avzhe ssh  --rsync-path="""rsync""" . jenkins@$2:$3"""
-rsync -avzhe ssh  --rsync-path="rsync" . jenkins@$2:$3
+echo "rsync -avzhe ssh  --rsync-path="""rsync""" ./www/* jenkins@$2:$3"""
+rsync -avzhe ssh  --rsync-path="rsync" ./www/* jenkins@$2:$3
 echo "---------------------------------------"
 
 #echo "--=== Set permisions on transfered files ===--"
