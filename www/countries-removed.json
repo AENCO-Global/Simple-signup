@@ -1,0 +1,22 @@
+[
+{"name": "Belarus", "code": "BY"},
+{"name": "Burundi", "code": "BI"},
+{"name": "Central African Republic", "code": "CF"},
+{"name": "Cuba", "code": "CU"},
+{"name": "Congo, The Democratic Republic of the", "code": "CD"},
+{"name": "Cote D'Ivoire", "code": "CI"},
+{"name": "Iran, Islamic Republic Of", "code": "IR"},
+{"name": "Iraq", "code": "IQ"},
+{"name": "Lebanon", "code": "LB"},
+{"name": "Libyan Arab Jamahiriya", "code": "LY"},
+{"name": "Myanmar", "code": "MM"},
+{"name": "Korea, Democratic People's Republic of", "code": "KP"},
+{"name": "Somalia", "code": "SO"},
+{"name": "Sudan", "code": "SD"},
+{"name": "Syrian Arab Republic", "code": "SY"},
+{"name": "Ukraine", "code": "UA"},
+{"name": "Russian Federation", "code": "RU"},
+{"name": "Venezuela", "code": "VE"},
+{"name": "Yemen", "code": "YE"},
+{"name": "Zimbabwe", "code": "ZW"}
+]
