@@ -1,27 +1,63 @@
-<div class="container" ng-show="showForm=='signin'">
+<div class="container" ng-show="showForm=='csignup'">
     <div style="margin-top:50px;" class="main-box col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <div class="panel-title">
-                    Sign Up 
-                </div>
+                <div class="panel-title">Sign Up</div>
             </div>
             <div style="padding-top:30px" class="panel-body">
                 <div ng-show="formError" class="alert alert-danger" ng-bind="formError"></div>
 
                 <form id="login-form" class="form-horizontal" role="form" ng-submit="doSignup()">
-                    <div style="margin-bottom: 25px;" class="input-group">
+						<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.fullname" placeholder="Full Name" required>
+						
+                        <select ng-blur="formdata.title ? inputFields.title=true : inputFields.title=false" ng-click="inputFields.title=true" class="form-control" ng-model="formdata.title" placeholder="Title" required>
+							<option value="Mr">Mr</option>
+							<option value="Miss">Miss</option>
+							<option value="Ms">Ms</option>
+							<option value="Madam,">Madam</option>
+							<option value="Ma'am">Ma'am</option>
+							<option value="Doctor">Doctor</option>
+							<option value="Professor">Professor</option>
+							<option value="Mc">Mc</option>
+						</select>
+						<div class="placeholder" ng-click="inputFields.title=true" ng-hide="inputFields.title">Title</div>
                     </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input type="date" class="form-control" ng-model="formdata.dob" placeholder="Date Of Birth" required>
+                        <select ng-blur="formdata.gender ? inputFields.gender=true : inputFields.gender=false" ng-click="inputFields.gender=true" class="form-control" ng-model="formdata.gender" placeholder="Gender" required>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="Unspcified">Unspecified</option>
+						</select>
+						<div class="placeholder" ng-click="inputFields.gender=true" ng-hide="inputFields.gender">Gender</div>
+                    </div>
+					
+                    <div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.givenname" placeholder="Given Name(s)" required>
+                    </div>
+					
+                    <div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.surname" placeholder="Surname/Family Name" required>
+                    </div>
+					
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="date" ng-click="inputFields.dob=true" ng-blur="formdata.dob ? inputFields.dob=true : inputFields.dob=false" class="form-control" ng-model="formdata.dob" placeholder="Date Of Birth" required>
+						<div class="placeholder dob" ng-click="inputFields.dob=true" ng-hide="inputFields.dob">Date Of Birth</div>
                     </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">
@@ -44,16 +80,17 @@
                         </span>
                         <input type="text" class="form-control" ng-model="formdata.dwa" placeholder="Digital Wallet Address" required>
                     </div>
-
+					
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <select class="form-control" ng-model="formdata.type" placeholder="Digital Currency Type" required>
+                        <select ng-click="inputFields.type=true" ng-blur="formdata.type ? inputFields.type=true : inputFields.type=false" class="form-control" ng-model="formdata.type" placeholder="Digital Currency Type" required>
 							<option value="Etherium">Etherium</option>
 							<option value="Waves">Waves</option>
 							<option value="AEN">AEN</option>
 						</select>
+						<div class="placeholder" ng-click="inputFields.type=true" ng-hide="inputFields.type">Digital Currency</div>
                     </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">

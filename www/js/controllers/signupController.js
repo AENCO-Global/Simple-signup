@@ -1,19 +1,22 @@
 signup_aencoin.controller( 'signupController' , function( $scope, $timeout, $http ){
-
-
-
+	
+	$scope.formdata = {title:'', gender:'', type:''};
+	$scope.inputFields = {dobType:'text',genderType:'text',titleType:'text'};
+	$scope.showForm = 'csignup';
+	
 	$http.get('version.html')
 		.then(function(data){
-			console.log(data.data);
 			$scope.version = data.data;
 		})
 		, function(data){
-			conmsole.log(data);
+			console.log(data);
 		};
 
-	$scope.showForm = 'signin';
-    
 	$scope.doSignup = function(){
+		console.log($scope.formdata);
+		exit;
+		stop;
+		
         $http.post( 'api/kyc.php' , $scope.formdata )
             .success( function(data){
                 if( data.success ){
@@ -21,7 +24,16 @@ signup_aencoin.controller( 'signupController' , function( $scope, $timeout, $htt
                 }
             })
             .error( function(data){
-                //alert('Unknown error talking to server. Please try again later.');
+                console.log('Unknown error talking to server. Please try again later.');
             });
     };
+	
+	$scope.reveal_dob = function(){
+		$scope.inputFields.dobType='date';
+		console.log($scope.inputFields);
+	}
+	$scope.hide_dob = function(){
+		if(!$scope.formdata.dob)$scope.inputFields.dobType='text';
+		console.log($scope.inputFields);
+	}
 });

@@ -1,5 +1,14 @@
 *{ box-sizing: border-box; }
 
+.placeholder{
+	position: absolute;
+	left: 55px;
+	top: 8px;
+	z-index: 1000;
+	color: #999;
+}
+.placeholder.dob{ left: 140px; }
+
 @media (min-width: 768px){
 	.container{
 		width: 90%;
