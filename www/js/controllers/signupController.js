@@ -12,6 +12,23 @@ signup_aencoin.controller( 'signupController' , function( $scope, $timeout, $htt
 			console.log(data);
 		};
 
+	$http({
+			url:'countries.json',
+			datatype: 'json',
+			method: 'GET',
+			headers: {
+				"Content-Type": "application/json"
+			}
+		})
+		.then(function(data){
+			console.log(data);
+			$scope.countries = data.data;
+			//$scope.formdata.nationality = $scope.countries[0];
+		})
+		, function(data){
+			console.log(data);
+		};
+	
 	$scope.doSignup = function(){
 		console.log($scope.formdata);
 		exit;
