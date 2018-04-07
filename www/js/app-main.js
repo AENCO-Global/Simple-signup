@@ -1,6 +1,6 @@
-var signup_aencoin = angular.module('signup_aencoin', ['ngAnimate','ngRoute','ngSanitize','ui.bootstrap']);
+var signup_aencoin = angular.module('signup_aencoin', ['ngAnimate','ngRoute','ngSanitize','ui.bootstrap','ngIntlTelInput']);
 
-signup_aencoin.config(function( $routeProvider, $locationProvider ){
+signup_aencoin.config(function( $routeProvider, $locationProvider, ngIntlTelInputProvider ){
     $routeProvider
         .when('/', { templateUrl: 'snippets/signup.html', controller: 'signupController' })
         .otherwise({ redirectTo: '/' });
@@ -10,6 +10,7 @@ signup_aencoin.config(function( $routeProvider, $locationProvider ){
 		requireBase: true
 	});
 */
+	 ngIntlTelInputProvider.set({excludeCountries: ['us','cn','bi','by','cu','cf','cd','ci','ir','iq','lb','ly','mm','kp','so','sy','sd','ua','ru','ve','ye','zw']});
 });
 
 signup_aencoin.controller( 'appinit' , function( $scope, $timeout, $http ){

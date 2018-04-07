@@ -21,9 +21,7 @@ signup_aencoin.controller( 'signupController' , function( $scope, $timeout, $htt
 			}
 		})
 		.then(function(data){
-			console.log(data);
 			$scope.countries = data.data;
-			//$scope.formdata.nationality = $scope.countries[0];
 		})
 		, function(data){
 			console.log(data);

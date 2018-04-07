@@ -1,13 +1,13 @@
 *{ box-sizing: border-box; }
 
-.placeholder{
-	position: absolute;
-	left: 55px;
-	top: 8px;
-	z-index: 1000;
-	color: #999;
-}
+.placeholder{ position: absolute; left: 55px; top: 8px; z-index: 1000; color: #999; }
 .placeholder.dob{ left: 140px; }
+.intl-tel-input { width: 100%; }
+.tel{ border-top-left-radius: 4px!important; border-bottom-left-radius: 4px!important; }
+
+.intl-tel-input{ display: table-cell; }
+.intl-tel-input .selected-flag{ z-index: 4!important; }
+.intl-tel-input .country-list { z-index: 2000!important; }
 
 @media (min-width: 768px){
 	.container{
