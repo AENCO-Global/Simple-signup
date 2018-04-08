@@ -243,6 +243,21 @@
 					<div style="margin-bottom: 25px; width: 100%;" class="input-group">
                         <input type="text" class="form-control tel" ng-model="formdata.ctel" ng-intl-tel-input placeholder="Contact Telephone" ng-required="formRequires">
                     </div>
+
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.cemail" placeholder="Contact Email Address" ng-required="formRequires">
+                    </div>
+
+					<span class="form-error fade" ng-show="cemail_confirm!=formdata.cemail">Must Match Contact Email Address.</span>
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="cemail_confirm" placeholder="Confirm Contact Email Address" ng-required="formRequires">
+                    </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
@@ -265,7 +280,8 @@
 					
                     <div style="margin-top: 10px;" class="form-group">
                         <div class="col-sm-10">
-                            <button class="btn btn-primary" type="submit">Sign Up</button>
+                            <button ng-disabled="formdat.cemail!=cemail_confirm" class="btn btn-primary" type="submit">Sign Up</button>
+							<span class="form-error fade" ng-show="formdata.cemail!=cemail_confirm">Form Errors. Please review</span>
                         </div>
                         <div class="col-sm-2">
                             <span ng-bind="version" class="pull-right small"></span>
