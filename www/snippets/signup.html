@@ -266,6 +266,14 @@
                         <input type="text" class="form-control" ng-model="formdata.dwa" placeholder="Digital Wallet Address" ng-required="formRequires">
                     </div>
 					
+					<span class="form-error fade" name="dwa_confirm" ng-show="dwa_confirm!=formdata.dwa">Must Match Wallet Address.</span>
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                        </span>
+                        <input type="text" ng-pattern="formdata.dwa" class="form-control" ng-model="dwa_confirm" placeholder="Confirm Digital Wallet Address" ng-required="formRequires" />
+                    </div>
+					
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
@@ -280,8 +288,8 @@
 					
                     <div style="margin-top: 10px;" class="form-group">
                         <div class="col-sm-10">
-                            <button ng-disabled="formdat.cemail!=cemail_confirm" class="btn btn-primary" type="submit">Sign Up</button>
-							<span class="form-error fade" ng-show="formdata.cemail!=cemail_confirm">Form Errors. Please review</span>
+                            <button ng-disabled="formdata.dwa!=dwa_confirm || formdat.cemail!=cemail_confirm" class="btn btn-primary" type="submit">Sign Up</button>
+							<span class="form-error fade" ng-show="formdata.dwa!=dwa_confirm || formdata.cemail!=cemail_confirm">Form Errors. Please review</span>
                         </div>
                         <div class="col-sm-2">
                             <span ng-bind="version" class="pull-right small"></span>
