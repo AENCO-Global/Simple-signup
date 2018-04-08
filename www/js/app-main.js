@@ -3,6 +3,7 @@ var signup_aencoin = angular.module('signup_aencoin', ['ngAnimate','ngRoute','ng
 signup_aencoin.config(function( $routeProvider, $locationProvider, ngIntlTelInputProvider ){
     $routeProvider
         .when('/', { templateUrl: 'snippets/signup.html', controller: 'signupController' })
+		.when('/:ky', { templateUrl: 'snippets/signup.html', controller: 'signupController' })
         .otherwise({ redirectTo: '/' });
 		
 /*	$locationProvider.html5Mode({

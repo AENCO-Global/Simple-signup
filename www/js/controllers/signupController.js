@@ -1,8 +1,12 @@
-signup_aencoin.controller( 'signupController' , function( $scope, $timeout, $http ){
+signup_aencoin.controller( 'signupController' , function( $scope, $timeout, $http, $routeParams ){
+	console.log($routeParams);
+	
+	if( $routeParams.ky == 'kyc' ){ $scope.showForm = 'csignup'; }
+	if( $routeParams.ky == 'kyb' ){ $scope.showForm = 'bsignup'; }
 	
 	$scope.formdata = {title:'', gender:'', type:''};
 	$scope.inputFields = {dobType:'text',genderType:'text',titleType:'text'};
-	$scope.showForm = 'csignup';
+	//$scope.showForm = 'csignup';
 	
 	$http.get('version.html')
 		.then(function(data){
@@ -29,18 +33,17 @@ signup_aencoin.controller( 'signupController' , function( $scope, $timeout, $htt
 	
 	$scope.doSignup = function(){
 		console.log($scope.formdata);
-		exit;
-		stop;
+		apiURL = 'api/'+$routeParams.ky+'.php';
 		
-        $http.post( 'api/kyc.php' , $scope.formdata )
-            .success( function(data){
+        $http.post( apiURL , {formdata:$scope.formdata} )
+            .then( function(data){
                 if( data.success ){
                     
                 }
             })
-            .error( function(data){
-                console.log('Unknown error talking to server. Please try again later.');
-            });
+            ,function(data){
+                console.log(data);
+            };
     };
 	
 	$scope.reveal_dob = function(){

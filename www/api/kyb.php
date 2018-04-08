@@ -1,3 +1,5 @@
 <?php
-print("Welcome to the Know you Business");
+require_once 'dp.php';
+
+
 ?>

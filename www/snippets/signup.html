@@ -1,3 +1,4 @@
+<!-- Customer signup form -->
 <div class="container" ng-show="showForm=='csignup'">
     <div style="margin-top:50px;" class="main-box col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
@@ -126,3 +127,129 @@
         </div>
     </div>
 </div>
+<!--  END customer signup form  -->
+
+<!-- Business signup form -->
+<div class="container" ng-show="showForm=='bsignup'">
+    <div style="margin-top:50px;" class="main-box col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Business Sign Up</div>
+            </div>
+            <div style="padding-top:30px" class="panel-body">
+                <div ng-show="formError" class="alert alert-danger" ng-bind="formError"></div>
+
+                <form id="login-form" class="form-horizontal" role="form" ng-submit="doSignup()">
+                    <div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.company" placeholder="Full Legal Company Name" required>
+                    </div>
+					
+                    <div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.incorporation" placeholder="Place of Incorporation" required>
+                    </div>
+
+                    <div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.rcaddress1" placeholder="Registered Company Address 1" required>
+                    </div>
+					
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.rcaddress2" placeholder="Registered Company Address 2">
+                    </div>
+					
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-globe"></i>
+                        </span>
+						<select ng-click="inputFields.rccountry=true" ng-blur="formdata.rccountry ? inputFields.rccountry=true : inputFields.rccountry=false" ng-model="formdata.rccountry" ng-options="country as country.name for country in countries" class="form-control" required></select>
+						<div class="placeholder" ng-click="inputFields.rccountry=true" ng-hide="inputFields.rccountry">Country of Registration</div>
+                    </div>
+
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-globe"></i>
+                        </span>
+						<select ng-click="inputFields.pob=true" ng-blur="formdata.pob ? inputFields.pob=true : inputFields.pob=false" ng-model="formdata.pob" ng-options="country as country.name for country in countries" class="form-control"></select>
+						<div class="placeholder" ng-click="inputFields.pob=true" ng-hide="inputFields.pob">Place of Business</div>
+                    </div>
+					
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.email" placeholder="Company Email" required>
+                    </div>
+					
+					<div style="margin-bottom: 25px; width: 100%;" class="input-group">
+                        <input type="text" class="form-control tel" ng-model="formdata.tel" ng-intl-tel-input placeholder="Company Telephone" required>
+                    </div>
+
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.contact_first_name" placeholder="Contact Person First Name" required>
+                    </div>
+					
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.contact_last_name" placeholder="Contact Person Surname" required>
+                    </div>
+
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.contact_position" placeholder="Contact Position in Company" required>
+                    </div>
+					
+					<div style="margin-bottom: 25px; width: 100%;" class="input-group">
+                        <input type="text" class="form-control tel" ng-model="formdata.ctel" ng-intl-tel-input placeholder="Contact Telephone" required>
+                    </div>
+					
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                        </span>
+                        <input type="text" class="form-control" ng-model="formdata.dwa" placeholder="Digital Wallet Address" required>
+                    </div>
+					
+					<div style="margin-bottom: 25px;" class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <select ng-click="inputFields.type=true" ng-blur="formdata.type ? inputFields.type=true : inputFields.type=false" class="form-control" ng-model="formdata.type" placeholder="Digital Currency Type" required>
+							<option value="Etherium">Etherium</option>
+							<option value="Waves">Waves</option>
+							<option value="AEN">AEN</option>
+						</select>
+						<div class="placeholder" ng-click="inputFields.type=true" ng-hide="inputFields.type">Digital Currency</div>
+                    </div>
+					
+                    <div style="margin-top: 10px;" class="form-group">
+                        <div class="col-sm-10">
+                            <button class="btn btn-primary" type="submit">Sign Up</button>
+                        </div>
+                        <div class="col-sm-2">
+                            <span ng-bind="version" class="pull-right small"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END business signup form -->
