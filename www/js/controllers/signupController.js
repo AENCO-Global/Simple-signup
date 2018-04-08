@@ -1,5 +1,5 @@
 signup_aencoin.controller( 'signupController' , function( $scope, $timeout, $http, $routeParams ){
-	$scope.formRequires = false;  //Change to true for production
+	$scope.formRequires = true;  //Change to true for production
 	
 	if( $routeParams.ky == 'kyc' ){ $scope.showForm = 'csignup'; }
 	if( $routeParams.ky == 'kyb' ){ $scope.showForm = 'bsignup'; }
