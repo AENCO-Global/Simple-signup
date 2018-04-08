@@ -1,13 +1,9 @@
 signup_aencoin.controller( 'signupController' , function( $scope, $timeout, $http, $routeParams ){
-	console.log($routeParams);
+	$scope.formRequires = false;  //Change to true for production
 	
 	if( $routeParams.ky == 'kyc' ){ $scope.showForm = 'csignup'; }
 	if( $routeParams.ky == 'kyb' ){ $scope.showForm = 'bsignup'; }
-	
-	$scope.formdata = {title:'', gender:'', type:''};
-	$scope.inputFields = {dobType:'text',genderType:'text',titleType:'text'};
-	//$scope.showForm = 'csignup';
-	
+		
 	$http.get('version.html')
 		.then(function(data){
 			$scope.version = data.data;
@@ -20,16 +16,9 @@ signup_aencoin.controller( 'signupController' , function( $scope, $timeout, $htt
 			url:'countries.json',
 			datatype: 'json',
 			method: 'GET',
-			headers: {
-				"Content-Type": "application/json"
-			}
-		})
-		.then(function(data){
-			$scope.countries = data.data;
-		})
-		, function(data){
-			console.log(data);
-		};
+			headers: { "Content-Type": "application/json" }
+		}).then(function(data){ $scope.countries = data.data; })
+			,function(data){ console.log(data); };
 	
 	$scope.doSignup = function(){
 		console.log($scope.formdata);

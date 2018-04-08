@@ -14,7 +14,8 @@
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
 						
-                        <select ng-blur="formdata.title ? inputFields.title=true : inputFields.title=false" ng-click="inputFields.title=true" class="form-control" ng-model="formdata.title" placeholder="Title" required>
+                        <select ng-blur="formdata.title ? inputFields.title=true : inputFields.title=false" ng-click="inputFields.title=true" class="form-control" ng-model="formdata.title" placeholder="Title" ng-required="formRequires">
+							<option></option>
 							<option value="Mr">Mr</option>
 							<option value="Miss">Miss</option>
 							<option value="Ms">Ms</option>
@@ -31,7 +32,8 @@
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <select ng-blur="formdata.gender ? inputFields.gender=true : inputFields.gender=false" ng-click="inputFields.gender=true" class="form-control" ng-model="formdata.gender" placeholder="Gender" required>
+                        <select ng-blur="formdata.gender ? inputFields.gender=true : inputFields.gender=false" ng-click="inputFields.gender=true" class="form-control" ng-model="formdata.gender" placeholder="Gender" ng-ng-required="formRequires"="true">
+							<option></option>
 							<option value="Male">Male</option>
 							<option value="Female">Female</option>
 							<option value="Unspcified">Unspecified</option>
@@ -43,21 +45,21 @@
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.givenname" placeholder="Given Name(s)" required>
+                        <input type="text" class="form-control" ng-model="formdata.givenname" placeholder="Given Name(s)" ng-required="formRequires">
                     </div>
 					
                     <div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.surname" placeholder="Surname/Family Name" required>
+                        <input type="text" class="form-control" ng-model="formdata.surname" placeholder="Surname/Family Name" ng-required="formRequires">
                     </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-calendar"></i>
                         </span>
-                        <input type="date" ng-click="inputFields.dob=true" ng-blur="formdata.dob ? inputFields.dob=true : inputFields.dob=false" class="form-control" ng-model="formdata.dob" placeholder="Date Of Birth" required>
+                        <input type="date" ng-click="inputFields.dob=true" ng-blur="formdata.dob ? inputFields.dob=true : inputFields.dob=false" class="form-control" ng-model="formdata.dob" placeholder="Date Of Birth" ng-required="formRequires">
 						<div class="placeholder dob" ng-click="inputFields.dob=true" ng-hide="inputFields.dob">Date Of Birth</div>
                     </div>
 					
@@ -65,7 +67,9 @@
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-globe"></i>
                         </span>
-						<select ng-click="inputFields.nationality=true" ng-blur="formdata.nationality ? inputFields.nationality=true : inputFields.nationality=false" ng-model="formdata.nationality" ng-options="country as country.name for country in countries" class="form-control"></select>
+						<select ng-click="inputFields.nationality=true" ng-blur="formdata.nationality ? inputFields.nationality=true : inputFields.nationality=false" ng-model="formdata.nationality" ng-options="country as country.name for country in countries" class="form-control" ng-required="formRequires">
+							<option></option>
+						</select>
 						<div class="placeholder" ng-click="inputFields.nationality=true" ng-hide="inputFields.nationality">Nationality</div>
                     </div>
 
@@ -73,26 +77,29 @@
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-globe"></i>
                         </span>
-						<select ng-click="inputFields.residence=true" ng-blur="formdata.residence ? inputFields.residence=true : inputFields.residence=false" ng-model="formdata.residence" ng-options="country as country.name for country in countries" class="form-control"></select>
+						<select ng-click="inputFields.residence=true" ng-blur="formdata.residence ? inputFields.residence=true : inputFields.residence=false" ng-model="formdata.residence" ng-options="country as country.name for country in countries" class="form-control" ng-required="formRequires">
+							<option></option>
+						</select>
 						<div class="placeholder" ng-click="inputFields.residence=true" ng-hide="inputFields.residence">Place of Residence</div>
                     </div>
 					
 					<div style="margin-bottom: 25px; width: 100%;" class="input-group">
-                        <input type="text" class="form-control tel" ng-model="formdata.tel" ng-intl-tel-input placeholder="Telephone Number" required>
+                        <input type="text" class="form-control tel" ng-model="formdata.tel" ng-intl-tel-input placeholder="Telephone Number" ng-required="formRequires">
                     </div>
 
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-briefcase"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.dwa" placeholder="Digital Wallet Address" required>
+                        <input type="text" class="form-control" ng-model="formdata.dwa" placeholder="Digital Wallet Address" ng-ng-required="formRequires"="formRequires">
                     </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <select ng-click="inputFields.type=true" ng-blur="formdata.type ? inputFields.type=true : inputFields.type=false" class="form-control" ng-model="formdata.type" placeholder="Digital Currency Type" required>
+                        <select ng-click="inputFields.type=true" ng-blur="formdata.type ? inputFields.type=true : inputFields.type=false" class="form-control" ng-model="formdata.type" placeholder="Digital Currency Type" ng-required="formRequires">
+							<option></option>
 							<option value="Etherium">Etherium</option>
 							<option value="Waves">Waves</option>
 							<option value="AEN">AEN</option>
@@ -104,14 +111,14 @@
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-envelope"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.email" placeholder="Email Address" required>
+                        <input type="text" class="form-control" ng-model="formdata.email" placeholder="Email Address" ng-required="formRequires">
                     </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-facetime-video"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.skype" placeholder="Skype Number/Address" required>
+                        <input type="text" class="form-control" ng-model="formdata.skype" placeholder="Skype Number/Address" ng-required="formRequires">
                     </div>
 					
                     <div style="margin-top: 10px;" class="form-group">
@@ -144,21 +151,21 @@
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.company" placeholder="Full Legal Company Name" required>
+                        <input type="text" class="form-control" ng-model="formdata.company" placeholder="Full Legal Company Name" ng-required="formRequires">
                     </div>
 					
                     <div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.incorporation" placeholder="Place of Incorporation" required>
+                        <input type="text" class="form-control" ng-model="formdata.incorporation" placeholder="Place of Incorporation" ng-required="formRequires">
                     </div>
 
                     <div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.rcaddress1" placeholder="Registered Company Address 1" required>
+                        <input type="text" class="form-control" ng-model="formdata.rcaddress1" placeholder="Registered Company Address 1" ng-required="formRequires">
                     </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">
@@ -172,7 +179,7 @@
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-globe"></i>
                         </span>
-						<select ng-click="inputFields.rccountry=true" ng-blur="formdata.rccountry ? inputFields.rccountry=true : inputFields.rccountry=false" ng-model="formdata.rccountry" ng-options="country as country.name for country in countries" class="form-control" required></select>
+						<select ng-click="inputFields.rccountry=true" ng-blur="formdata.rccountry ? inputFields.rccountry=true : inputFields.rccountry=false" ng-model="formdata.rccountry" ng-options="country as country.name for country in countries" class="form-control" ng-required="formRequires"></select>
 						<div class="placeholder" ng-click="inputFields.rccountry=true" ng-hide="inputFields.rccountry">Country of Registration</div>
                     </div>
 
@@ -188,50 +195,50 @@
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-envelope"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.email" placeholder="Company Email" required>
+                        <input type="text" class="form-control" ng-model="formdata.email" placeholder="Company Email" ng-required="formRequires">
                     </div>
 					
 					<div style="margin-bottom: 25px; width: 100%;" class="input-group">
-                        <input type="text" class="form-control tel" ng-model="formdata.tel" ng-intl-tel-input placeholder="Company Telephone" required>
+                        <input type="text" class="form-control tel" ng-model="formdata.tel" ng-intl-tel-input placeholder="Company Telephone" ng-required="formRequires">
                     </div>
 
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.contact_first_name" placeholder="Contact Person First Name" required>
+                        <input type="text" class="form-control" ng-model="formdata.contact_first_name" placeholder="Contact Person First Name" ng-required="formRequires">
                     </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.contact_last_name" placeholder="Contact Person Surname" required>
+                        <input type="text" class="form-control" ng-model="formdata.contact_last_name" placeholder="Contact Person Surname" ng-required="formRequires">
                     </div>
 
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-envelope"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.contact_position" placeholder="Contact Position in Company" required>
+                        <input type="text" class="form-control" ng-model="formdata.contact_position" placeholder="Contact Position in Company" ng-required="formRequires">
                     </div>
 					
 					<div style="margin-bottom: 25px; width: 100%;" class="input-group">
-                        <input type="text" class="form-control tel" ng-model="formdata.ctel" ng-intl-tel-input placeholder="Contact Telephone" required>
+                        <input type="text" class="form-control tel" ng-model="formdata.ctel" ng-intl-tel-input placeholder="Contact Telephone" ng-required="formRequires">
                     </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-briefcase"></i>
                         </span>
-                        <input type="text" class="form-control" ng-model="formdata.dwa" placeholder="Digital Wallet Address" required>
+                        <input type="text" class="form-control" ng-model="formdata.dwa" placeholder="Digital Wallet Address" ng-required="formRequires">
                     </div>
 					
 					<div style="margin-bottom: 25px;" class="input-group">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <select ng-click="inputFields.type=true" ng-blur="formdata.type ? inputFields.type=true : inputFields.type=false" class="form-control" ng-model="formdata.type" placeholder="Digital Currency Type" required>
+                        <select ng-click="inputFields.type=true" ng-blur="formdata.type ? inputFields.type=true : inputFields.type=false" class="form-control" ng-model="formdata.type" placeholder="Digital Currency Type" ng-required="formRequires">
 							<option value="Etherium">Etherium</option>
 							<option value="Waves">Waves</option>
 							<option value="AEN">AEN</option>
