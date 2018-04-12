@@ -18,7 +18,7 @@ end box
 ==New Account==
 Investor -> Home : Visits
 Home -> SignUp :Create Account:
-SignUp --> Investor :Send Email:
+SignUp --> Investor :Send Confirmation Email:
 Investor -> prof :Confirm Email:
 ref over prof : fill in Profile
 prof -> api :Confirm:
@@ -26,7 +26,7 @@ ref over api : pass paramters\n for KYC
 api -> int :Confirm:
 int --> int :Validate:
 int --> prof :Update Status:
-int --> Investor :Confired KYC:
+int --> Investor :Confirmed KYC:
 prof -> Investor :Confirmed account message:
 
 ==Existing Account==
