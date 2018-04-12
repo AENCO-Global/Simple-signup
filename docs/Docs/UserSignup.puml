@@ -1,0 +1,39 @@
+@startuml
+skinparam ParticipantPadding 20
+skinparam BoxPadding 10
+
+box "AEN Forms"
+  Actor Investor
+  participant Home
+  participant Login
+  participant SignUp
+  participant Profile as prof
+end box
+
+box "KYC Provider"
+participant API as api
+participant Interview as int
+end box
+
+==New Account==
+Investor -> Home : Visits
+Home -> SignUp :Create Account:
+SignUp --> Investor :Send Email:
+Investor -> prof :Confirm Email:
+ref over prof : fill in Profile
+prof -> api :Confirm:
+ref over api : pass paramters\n for KYC
+api -> int :Confirm:
+int --> int :Validate:
+int --> prof :Update Status:
+int --> Investor :Confired KYC:
+prof -> Investor :Confirmed account message:
+
+==Existing Account==
+Investor -> Home : Visits
+Home -> Login :Has Account:
+Login --> prof :Review and confirm profile:
+
+==End of Profile Management and creation==
+
+@enduml
